@@ -1,0 +1,19 @@
+{% extends "polls/base.html" %}
+{% block content %}
+	<div class="container">
+		<form class="form-group needs-validation" method="post" action="{% url 'edit-post' %}">
+			{%csrf_token%}
+			<h1 class="h3 mb-3 font-weight-normal">Edit Post</h1>
+			<div class="pt-3">
+				<input type="text" class="form-control" placeholder="Title (max-length = 100)" maxlength="100" required autofocus name="title"
+				value="{{post_title}}">
+			</div>
+			<div class="pt-3">
+				<input class="form-control" placeholder="Content" required name="content"></input>
+			</div>
+			<div class="pt-3">
+				<input type="submit" name="submit" class="btn btn-lg  btn-primary" value="Update post">
+			</div>
+		</form>
+	</div>
+{% endblock content %}

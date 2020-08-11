@@ -1,0 +1,18 @@
+{% extends 'polls/base.html' %}
+{% block content %}
+	<div class="container">
+		<form class="form-group needs-validation" method="post" action="{% url 'new-post' %}">
+			{%csrf_token%}
+			<h1 class="h3 mb-3 font-weight-normal">Create Post</h1>
+			<div class="pt-3">
+				<input type="text" class="form-control" placeholder="Title" required autofocus name="title">
+			</div>
+			<div class="pt-3">
+				<textarea class="form-control" rows="8" rows="197" placeholder="Content" required name="content"></textarea>
+			</div>
+			<div class="pt-3">
+				<input type="submit" name="submit" class="btn btn-lg btn-primary" value="Create">
+			</div>
+		</form>
+	</div>
+{% endblock content %}
